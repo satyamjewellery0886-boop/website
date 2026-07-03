@@ -1,0 +1,6 @@
+{
+  "name": "Satyam Jewellery Showroom",
+  "description": "Exquisite luxury jewelry showroom for Satyam Jewellery, managed by Avinash Nandam. Handcrafted gold, silver, bridal collections, and live rate tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

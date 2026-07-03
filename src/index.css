@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Cinzel", "Georgia", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-gold-light: #F9E4B7;
+  --color-gold: #D4AF37;
+  --color-gold-dark: #AA7C11;
+  --color-gold-deep: #1A1510;
+  --color-charcoal: #121212;
+  --color-luxury-black: #090807;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090807;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #AA7C11, #D4AF37, #AA7C11);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #D4AF37, #F9E4B7, #D4AF37);
+}
+
+/* Golden Shine Effect */
+@keyframes goldShine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shine-text {
+  background: linear-gradient(
+    90deg,
+    #AA7C11 0%,
+    #D4AF37 25%,
+    #F9E4B7 50%,
+    #D4AF37 75%,
+    #AA7C11 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldShine 6s linear infinite;
+}
+
+.gold-shine-bg {
+  background: linear-gradient(
+    135deg,
+    #AA7C11 0%,
+    #D4AF37 25%,
+    #F9E4B7 50%,
+    #D4AF37 75%,
+    #AA7C11 100%
+  );
+  background-size: 200% auto;
+  animation: goldShine 6s linear infinite;
+}
+
+/* Custom styles for luxury appearance */
+.glass-panel {
+  background: rgba(15, 12, 10, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 12px 40px 0 rgba(212, 175, 55, 0.1);
+  background: rgba(22, 18, 14, 0.8);
+}
+
+/* Golden Radial Background Accent */
+.gold-glow-radial {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.gold-glow-radial-sm {
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(0, 0, 0, 0) 50%);
+}
+
+/* Floating Animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatUp 8s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+/* Particle Flow */
+@keyframes particleFlow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.floating-particle {
+  position: absolute;
+  pointer-events: none;
+  background: linear-gradient(135deg, #F9E4B7, #D4AF37);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFlow 15s linear infinite;
+}
